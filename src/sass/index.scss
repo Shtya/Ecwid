@@ -6,6 +6,43 @@
   box-sizing: border-box;
 }
 
+#container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 120vh;
+  background-color: #f0f0f0;
+}
+#div1, #div2 {
+  flex: 1;
+  text-align: center;
+  padding: 20px;
+}
+#div2 {
+  position: relative;
+}
+#phone {
+  position: absolute;
+  transform-origin: top right;
+  transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 a{
   text-decoration: none;
 }
@@ -230,90 +267,90 @@ ul{
   }
 }
 
-// SliderPhone
-.Animation{    
-  display: block;
-  width: 100vw;
-  height: 160vh;
-  position: absolute;
-  transition: width 1s ease-in-out, left 1s ease-in-out, background-color 1s ease-in-out;
-  background-color: #fae053;
-  top: 0;
-  right: -67%;
-  // transform: rotate(23deg) !important;
-  .SliderPhone{
-    background-image: url("../../public/phone.png");
-    margin: 40px 0;
-    position: absolute;
-    width: 200px;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    left: -150px;
-    top: 600px;
-    img {
-      position: absolute;
-      width: 88%;
-      height: 90%;
-      object-fit: contain;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-    }
-  }
 
-}
 
 .Landing2{
-  .shadow{
-    position: absolute;
+  .container{
     width: 100%;
-    height: 100%;
-    background-color: #fae053;
-    z-index: -1;
-    left: 0;
-    top: 0;
-  }
-  .contor{
-    position: relative;
-    padding: 40px;
-    width: 800px;
-    min-height: 100vh ;
     display: flex;
+    
+  }
+  @media (max-width:900px) {
+    .right1{
+      width: 100% !important;
+      h2{
+        font-size: 30px !important;
+      }
+      p{
+        font-size: 16px !important;
+      }
+      img{
+        width: 100px;
+      }
+      span{
+        font-size: 12px !important;
+      }
+    }
+  }
+  .right1{    
+    width: 50%;
+    font-weight: 400;
+    
+    font-size: 18px;
+    line-height: 150%;
+    font-family: Montserrat,sans-serif;
+    color: #0a0c0f;
+    text-align: center;
+    display: block;
+    background-color: #fae053;
+    bottom: 0;
+    transition: width 1s ease-in-out,left 1s ease-in-out,background-color 1s ease-in-out;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    padding: 40px;
 
     h2{    
+      
       font-family: Montserrat,sans-serif;
       text-align: left;
+      -webkit-text-size-adjust: none;
       transition: opacity 1s ease-in-out,transform 1s ease-in-out,padding-top .5s ease-in-out;
       transition-delay: .1s;
       opacity: 1;
       transform: translateX(0);
       margin: 0 0 24px;
       font-weight: 700;
+      line-height: 120%;
+      hyphens: none;
       font-size: 48px;
       color: #000;}
-
     p{    font-weight: 400;
+      
+      
       font-family: Montserrat,sans-serif;
       color: #0a0c0f;
       text-align: left;
+      -webkit-text-size-adjust: none;
       margin: 16px 0 0;
       font-size: 18px;
       line-height: 150%;
       margin-top: 0;}
-    .group{
+    .group1{
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      margin: 10px 0;
+      gap: 20px;
+      padding: 20px;
       img{}
-      span{
-        font-weight: 400;
+      span{    font-weight: 400;
+        
+        
         font-family: Montserrat,sans-serif;
         text-align: left;
+        -webkit-text-size-adjust: none;
         font-size: 18px;
         line-height: 24px;
         max-width: 360px;
@@ -321,13 +358,11 @@ ul{
         display: inline-block;
         padding-top: 4px;
         padding-bottom: 4px;
-        margin-left: 24px;
-        padding-left: 24px;
-        color: black;
-      }
+        color: black;}
     }
-    button{
+    button{    
       
+      -webkit-text-size-adjust: none;
       font: 400 1.125em/1.2em Montserrat,sans-serif;
       text-decoration: none;
       cursor: pointer;
@@ -344,6 +379,7 @@ ul{
       text-align: center;
       white-space: pre-wrap;
       width: auto;
+      hyphens: none;
       padding: 14px 38px;
       color: #fff;
       background-color: #000;
@@ -355,10 +391,116 @@ ul{
       font-family: Montserrat,sans-serif;
       font-weight: 600;
       font-size: 18px;
-      line-height: 24px;
-    }
+      line-height: 24px;}
+  }
+
+
+  // .endpoint{
+  //   font-weight: 400;
+  //   font-size: 18px;
+  //   line-height: 150%;
+  //   font-family: Montserrat,sans-serif;
+  //   color: #0a0c0f;
+  //   text-align: center;
+  //   display: block;
+  //   width: 100vw;
+  //   height: 160vh;
+  //   position: absolute;
+  //   bottom: 0;
+  //   transition: width 1s ease-in-out,left 1s ease-in-out,background-color 1s ease-in-out;
+  //   background-color: #6a8dd4;
+  //   right: -70%;
+   
+  // }
+  .left{
+    width: 50%;
   }
 }
+
+
+.all{
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  font-family: Montserrat,sans-serif;
+  color: #0a0c0f;
+  text-align: center;
+  -webkit-text-size-adjust: none;
+  display: block!important;
+  opacity: 1;
+  position: relative;
+  height: 100vh;
+  transform-origin: 0 100%;
+  margin-left: -50px;
+  margin-top: -90px;
+  transform: matrix(0.86603, 0.5, -0.5, 0.86603, 0, 0);
+
+  .endpoint{
+    font-weight: 400;
+    
+    font-size: 18px;
+    line-height: 150%;
+    
+    font-family: Montserrat,sans-serif;
+    color: #0a0c0f;
+    text-align: center;
+    -webkit-text-size-adjust: none;
+    display: block;
+    width: 100vw;
+    height: 160vh;
+    position: absolute;
+    bottom: 0;
+    transition: width 1s ease-in-out,left 1s ease-in-out,background-color 1s ease-in-out;
+    background-color: #fae053;
+    right: -900px;
+  }
+  .phone{
+    background-image: url("../../public/phone.png");
+    margin: 40px 0;
+    position: absolute;
+    width: 200px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    left: -174px;
+    bottom: 0;
+    img {
+      position: absolute;
+      width: 88%;
+      height: 90%;
+      object-fit: contain;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+  // .Ipad{
+  //   background-image: url("../../public/img/Iphone/Ipad.jpg");
+  //   margin: 40px 0;
+  //   position: absolute;
+  //   width: 200px;
+  //   height: 400px;
+  //   background-size: cover;
+  //   background-position: center;
+  //   overflow: hidden;
+  //   left: -174px;
+  //   bottom: 0;
+  //   img {
+  //     position: absolute;
+  //     width: 88%;
+  //     height: 90%;
+  //     object-fit: contain;
+  //     top: 50%;
+  //     left: 50%;
+  //     transform: translate(-50%, -50%);
+  //     z-index: -1;
+  //   }
+  // }
+}
+
+
 
 // 2)
 .Landing{
@@ -367,6 +509,7 @@ ul{
       width: 200px !important;
     }
   }
+  overflow: hidden;
   position: relative;
   .container{
     min-height: 100vh;

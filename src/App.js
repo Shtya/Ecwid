@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState ,useLayoutEffect } from "react";
 import {Test} from "./Test"
 import AOS from "aos"
 import 'aos/dist/aos.css'
@@ -21,26 +21,13 @@ function App() {
 
 
 
-  // intersection observer 
-  const { ref, inView, entry } = useInView({
-    /* Optional options */
-    threshold: 0,
-  });
-  // entry?.target.classList.toggle("slide" , entry.isIntersecting) 
-
-  console.log(entry?.target.scrollTop)
-
-
   // Rotation 
-  const [rotation, setRotation] = useState(45);
+  const [rotation, setRotation] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const newRotation = 45 - scrollY /10;
-      const clampedRotation = Math.min(45, newRotation);
-      // const newRotation = scrollY / 10 % Math.PI;
-      setRotation(scrollY);
+      setRotation((scrollY + 200) / 20);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -48,6 +35,8 @@ function App() {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+
 
 
   return (
@@ -84,34 +73,44 @@ function App() {
       {/* ( 2 ) */}
       <div id="Landing" className="Landing"   >
         <div className="container">
-          
           <div className="right">
             <h2>Start Selling <span></span></h2>
             <p>Become the next online success story — sell anything, anywhere, to anyone. Control everything from a single platform with centralized inventory,order management, and pricing.</p>
             <button> Get started for free</button>
           </div>
-
-          <div className="Animation" style={{transform:`rotate(${rotation}deg)`}} ref={ref} >
-            <div className="SliderPhone"><img  src={`./img/Iphone/${images[currentSlider]}.jpg`} alt="" /></div>
+          <div className="all">
+          <div className="endpoint" style={{transform: `rotate(${-rotation}deg)` }}>
+            <div className="phone"  ><img  src={`./img/Iphone/${images[currentSlider]}.jpg`} alt="" /></div>
           </div>
-
+          </div>
         </div>
+
       </div>
 
-      <div className="Landing2">
-        <div className="contor">
-          <div className="shadow"></div>
-        <div className="right">
-          <h2>Your first sale is only a few clicks away</h2>
-          <p>The easiest way to sell anything — products, services, digital goods, subscriptions — without coding, developers, designers. Manage everything in  one place — from your desk or on-the-go. Just sign up and start building your dream.</p>
-          <div className="group">
-            <img src="./Screenshot 2023-10-11 133645.png" alt="" />
-            <span>2022 TOP PERFORMER. <br/> Small Business eCommerce Software </span>
+
+        <div className="Landing2"  >
+          <div className="container">
+
+          <div className="right1"  >
+            <h2>Your first sale is only a few clicks away</h2>
+            <p>The easiest way to sell anything — products, services, digital goods, subscriptions — without coding, developers, designers. Manage everything in  one place — from your desk or on-the-go. Just sign up and start building your dream.</p>
+            <div className="group1">
+              <img src="./Screenshot 2023-10-11 133645.png" alt="" />
+              <span>2022 TOP PERFORMER. <br/> Small Business eCommerce Software </span>
+            </div>
+            <button>Get start for free </button>
           </div>
-          <button>Get start for free </button>
+
+
+
+          <div className="left1" >
+            {/* <video src="./WhatsApp Video 2023-10-10 at 23.42.53_e3723d33.mp4" type="mp4" controls></video> */}
+          </div>
+
+          </div>
         </div>
-        </div>
-      </div>
+
+
 
 
       {/* ( 3 ) */}
@@ -525,3 +524,11 @@ function App() {
 }
 
 export default App;
+
+
+// {/* <div className="left">
+//           <div className="endpoint">
+//             <div className="skew"></div>
+//             {/*  */}
+//           </div>
+//         </div> */}
