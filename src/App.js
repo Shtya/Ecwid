@@ -27,7 +27,7 @@ function App() {
 
           <i onClick={_=> setclose(!close)} className={`fa-solid fa-${close ? "bars" :"xmark"}`}></i>
 
-          <ul className="right" style={close ? {right: "-1000px"} : {right: "-50px"}}>
+          <ul className="right" style={close ? {right: "-1000px"} : {right: "-20px"}}>
             <li>Learn</li>
             <li>Partners</li>
             <li>Pricing</li>
@@ -65,8 +65,8 @@ function App() {
       <div className="Sell" data-aos="fade-up" >
         <div className="container">
           <div className="coverImg">
-            <img className="FirstImg" src="./Slider_Website_1.png" alt="" />
-            <img className="SecondImg" src="./Slider_Website_2.png" alt="" />
+            <div className="cover" data-aos="fade-left" ><img className="FirstImg" src="./Slider_Website_1.png" alt="" /></div>
+            <div className="cover1" data-aos="fade-right" ><img className="SecondImg" src="./Slider_Website_2.png" alt="" /></div>
           </div>
 
           <div className="right">
@@ -105,7 +105,7 @@ function App() {
       {/* ( 4 ) */}
       <div className="GrowFaster" data-aos="fade-left">
         <div className="container">
-          <div className="right">
+          <div className="right" data-aos="fade-right" >
             <h2>Grow faster</h2>
             <p>
               Take your business to the next level with our easy-to-use
@@ -126,7 +126,7 @@ function App() {
             </ul>
           </div>
 
-          <div className="coverImg">
+          <div className="coverImg" data-aos="fade-left" >
             <img  className="FirstImg"  src="./Home_page_Google_MC_FB-1686055463.png"  alt=""/>
           </div>
         </div>
@@ -136,7 +136,7 @@ function App() {
       <div className="ManageSimply" >
         <div className="container">
           <div className="coverImg" >
-            <div className="cover1" data-aos="fade-right">  <img  className="FirstImg"   src="./phc-slider-3_slide-1--layer2.png"  alt=""/> </div>
+            <div className="cover3" data-aos="fade-right">  <img  className="FirstImg"   src="./phc-slider-3_slide-1--layer2.png"  alt=""/> </div>
            <div className="cover2" data-aos="fade-left"> <img  className="SecondImg"  src="./phc-slider-3_slide-1--layer1.png"  alt=""/> </div> 
 
           </div>
@@ -222,7 +222,7 @@ function App() {
       {/* ( 7 ) */}
       <div className="Shapes">
         <div className="container">
-          <div className="row">
+          <div className="row" data-aos="fade-right">
             <div className="inter">
               <img src="./1.png" alt="" />
               <h2>Live Support</h2>
@@ -233,7 +233,7 @@ function App() {
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" data-aos="fade-down">
             <div className="inter">
               <img src="./2.png" alt="" />
               <h2>Ecwid App Market</h2>
@@ -247,7 +247,7 @@ function App() {
             </div>
           </div>
 
-          <div className="row">
+          <div className="row" data-aos="fade-left">
             <div className="inter">
               <img src="./3.png" alt="" />
               <h2>Manage On Mobile</h2>

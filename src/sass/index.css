@@ -42,6 +42,23 @@ ul {
 .nav {
   height: 80px;
 }
+@media (max-width: 600px) {
+  .nav img {
+    width: 70px;
+  }
+  .nav li {
+    font-size: 14px !important;
+  }
+  .nav .right {
+    padding: 60px 10px 10px 10px !important;
+    right: -20px;
+  }
+  .nav .right .btn {
+    font-size: 12px !important;
+    font-weight: normal;
+    padding: 5px;
+  }
+}
 .nav .container {
   font-size: 18px;
   color: #0a0c0f;
@@ -50,6 +67,7 @@ ul {
   position: relative;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
 }
 .nav .container .left {
   font-weight: 400;
@@ -91,7 +109,7 @@ ul {
 .nav .container .fa-bars, .nav .container .fa-xmark {
   display: block;
   font-size: 30px;
-  color: rgb(90, 50, 50);
+  color: black;
   top: 50%;
   transform: translateY(-50%);
   right: 0;
@@ -132,8 +150,6 @@ ul {
   letter-spacing: 0;
   border: 2px solid;
   display: inline-block;
-  min-width: 144px;
-  max-width: 560px;
   vertical-align: top;
   margin: 0;
   text-align: center;
@@ -154,24 +170,32 @@ ul {
   transform: translateY(-5px);
 }
 @media (min-width: 1100px) {
+  .nav .container .fa-bars, .nav .container .fa-xmark {
+    position: relative !important;
+  }
   .nav .container .right {
     right: 0 !important;
   }
 }
 @media (max-width: 1100px) {
+  .nav .container .fa-bars, .nav .container .fa-xmark {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+  }
   .nav .container .right {
-    position: absolute;
     background-color: white;
     right: -80px;
     flex-direction: column;
     position: absolute;
     z-index: 40000;
     width: 50%;
-    height: 100vh;
+    height: 110vh;
     top: -20px;
     transition: 0.5s;
     box-shadow: 4px 4px 16px 2px rgba(0, 0, 0, 0.1);
     padding: 50px;
+    position: fixed;
   }
   .nav .container .right li {
     font-size: 20px;
@@ -192,6 +216,11 @@ ul {
 .Landing {
   overflow: hidden;
   position: relative;
+}
+@media (max-width: 600px) {
+  .Landing .left video {
+    width: 200px !important;
+  }
 }
 .Landing .container {
   min-height: 80vh;
@@ -347,6 +376,18 @@ ul {
   margin: 0;
   padding-bottom: 0;
 }
+@media (max-width: 600px) {
+  .Sell .coverImg, .GrowFaster .coverImg, .ManageSimply .coverImg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .Sell .cover1, .Sell .cover, .GrowFaster .cover1, .GrowFaster .cover, .ManageSimply .cover1, .ManageSimply .cover {
+    width: 400px !important;
+    height: 400px !important;
+  }
+}
 .Sell .container, .GrowFaster .container, .ManageSimply .container {
   display: flex;
   align-items: center;
@@ -366,6 +407,14 @@ ul {
   flex: 0 0 50%;
   max-width: 50%;
   text-align: center;
+}
+.Sell .container .coverImg .cover1, .GrowFaster .container .coverImg .cover1, .ManageSimply .container .coverImg .cover1 {
+  position: absolute;
+  z-index: -1;
+  width: 600px;
+  height: 600px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .Sell .container .coverImg .FirstImg, .GrowFaster .container .coverImg .FirstImg, .ManageSimply .container .coverImg .FirstImg {
   font-weight: 400;
@@ -486,6 +535,20 @@ ul {
 .Introducing {
   padding: 40px 0;
 }
+@media (max-width: 600px) {
+  .Introducing .right h2 {
+    font-size: 25px !important;
+  }
+  .Introducing .right p {
+    font-size: 16px !important;
+  }
+  .Introducing .CoverImg {
+    width: 100% !important;
+  }
+  .Introducing .CoverImg img {
+    width: 400px !important;
+  }
+}
 .Introducing .container {
   display: flex;
   align-items: center;
@@ -580,6 +643,14 @@ ul {
 
 .Shapes {
   padding: 40px 0;
+}
+@media (max-width: 600px) {
+  .Shapes .inter h2 {
+    font-size: 25px !important;
+  }
+  .Shapes .inter p {
+    font-size: 16px !important;
+  }
 }
 @media (max-width: 830px) {
   .Shapes .container {
@@ -735,6 +806,22 @@ ul {
   background: #0a0c0f;
   background-color: #000;
   color: white;
+}
+@media (max-width: 600px) {
+  .Footer .row {
+    width: 130px !important;
+  }
+}
+@media (max-width: 600px) {
+  .Footer .container .bottom img {
+    width: 90px !important;
+  }
+  .Footer .container .bottom ul {
+    display: none !important;
+  }
+  .Footer .container .bottom .Copyright {
+    font-size: 12px !important;
+  }
 }
 .Footer .container .top {
   display: flex;
