@@ -41,6 +41,9 @@ ul {
 
 .nav {
   height: 80px;
+  background-color: white;
+  position: relative;
+  z-index: 40;
 }
 @media (max-width: 600px) {
   .nav img {
@@ -213,8 +216,132 @@ ul {
   }
 }
 
-.Landing {
+.Animation {
+  display: block;
+  width: 100vw;
+  height: 160vh;
+  position: absolute;
+  transition: width 1s ease-in-out, left 1s ease-in-out, background-color 1s ease-in-out;
+  background-color: #fae053;
+  top: 0;
+  right: -67%;
+}
+.Animation .SliderPhone {
+  background-image: url("../../public/phone.png");
+  margin: 40px 0;
+  position: absolute;
+  width: 200px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
+  left: -150px;
+  top: 600px;
+}
+.Animation .SliderPhone img {
+  position: absolute;
+  width: 88%;
+  height: 90%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.Landing2 .shadow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fae053;
+  z-index: -1;
+  left: 0;
+  top: 0;
+}
+.Landing2 .contor {
+  position: relative;
+  padding: 40px;
+  width: 800px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.Landing2 .contor h2 {
+  font-family: Montserrat, sans-serif;
+  text-align: left;
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out, padding-top 0.5s ease-in-out;
+  transition-delay: 0.1s;
+  opacity: 1;
+  transform: translateX(0);
+  margin: 0 0 24px;
+  font-weight: 700;
+  font-size: 48px;
+  color: #000;
+}
+.Landing2 .contor p {
+  font-weight: 400;
+  font-family: Montserrat, sans-serif;
+  color: #0a0c0f;
+  text-align: left;
+  margin: 16px 0 0;
+  font-size: 18px;
+  line-height: 150%;
+  margin-top: 0;
+}
+.Landing2 .contor .group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.Landing2 .contor .group span {
+  font-weight: 400;
+  font-family: Montserrat, sans-serif;
+  text-align: left;
+  font-size: 18px;
+  line-height: 24px;
+  max-width: 360px;
+  vertical-align: top;
+  display: inline-block;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-left: 24px;
+  padding-left: 24px;
+  color: black;
+}
+.Landing2 .contor button {
+  font: 400 1.125em/1.2em Montserrat, sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+  letter-spacing: 0;
+  border: 2px solid;
+  border-radius: 6px;
+  outline: 0 none;
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 144px;
+  max-width: 560px;
+  vertical-align: top;
+  margin: 0;
+  text-align: center;
+  white-space: pre-wrap;
+  width: auto;
+  padding: 14px 38px;
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+  box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.35);
+  transition: transform 0.1s linear, box-shadow 0.1s linear, background-color 0.1s linear;
+  padding-top: 14px;
+  padding-bottom: 13px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.Landing {
   position: relative;
 }
 @media (max-width: 600px) {
@@ -223,7 +350,7 @@ ul {
   }
 }
 .Landing .container {
-  min-height: 80vh;
+  min-height: 100vh;
   margin: auto;
   display: flex;
   justify-content: space-between;
@@ -240,13 +367,10 @@ ul {
   }
 }
 .Landing .right h2 {
-  -webkit-hyphens: none;
-          hyphens: none;
   color: #000;
   font-weight: 800;
   letter-spacing: 0;
   font-size: 48px;
-  line-height: 120%;
 }
 .Landing .right p {
   font-weight: 400;
@@ -273,8 +397,6 @@ ul {
   text-align: center;
   white-space: pre-wrap;
   width: auto;
-  -webkit-hyphens: none;
-          hyphens: none;
   padding: 14px 38px;
   color: #fff;
   background-color: #000;
@@ -451,9 +573,6 @@ ul {
 .Sell .container .right h2, .GrowFaster .container .right h2, .ManageSimply .container .right h2 {
   margin: 0 0 24px;
   font-weight: 700;
-  line-height: 120%;
-  -webkit-hyphens: none;
-          hyphens: none;
   font-size: 48px;
   color: #000;
   margin-top: 16px;
@@ -559,9 +678,6 @@ ul {
   text-align: left;
   margin: 0 0 24px;
   font-weight: 700;
-  line-height: 120%;
-  -webkit-hyphens: none;
-          hyphens: none;
   font-size: 48px;
   color: #000;
 }
@@ -588,8 +704,6 @@ ul {
   text-align: center;
   white-space: pre-wrap;
   width: auto;
-  -webkit-hyphens: none;
-          hyphens: none;
   color: #fff;
   background-color: #000;
   border-color: #000;
@@ -752,8 +866,6 @@ ul {
   margin: 0 0 24px;
   font-weight: 700;
   line-height: 120%;
-  -webkit-hyphens: none;
-          hyphens: none;
   font-size: 64px;
 }
 @media (max-width: 830px) {
@@ -775,8 +887,6 @@ ul {
   text-align: center;
   white-space: pre-wrap;
   width: auto;
-  -webkit-hyphens: none;
-          hyphens: none;
   padding: 14px 38px;
   color: #212b37;
   background-color: #fae053;

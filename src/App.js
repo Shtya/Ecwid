@@ -1,11 +1,54 @@
 import { useEffect, useRef, useState } from "react";
-
+import {Test} from "./Test"
 import AOS from "aos"
 import 'aos/dist/aos.css'
+import { useInView } from 'react-intersection-observer';
 
 function App() {
   useEffect(_=> { AOS.init({duration:2000}) },[])
   const [close , setclose]  = useState(true)
+
+
+  // Images SetInterval 
+  const images = ["0" , "1"  , "2" , "3" , "4" , "5"]
+  const [currentSlider , setCurrentSlider] = useState(0)
+
+  useEffect(_=>{
+    const interval = setInterval(_=> {setCurrentSlider(curr => (curr + 1) % images.length)},2000);
+    return _=> clearInterval(interval)
+  } , [])
+
+
+
+
+  // intersection observer 
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 0,
+  });
+  // entry?.target.classList.toggle("slide" , entry.isIntersecting) 
+
+  console.log(entry?.target.scrollTop)
+
+
+  // Rotation 
+  const [rotation, setRotation] = useState(45);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const newRotation = 45 - scrollY /10;
+      const clampedRotation = Math.min(45, newRotation);
+      // const newRotation = scrollY / 10 % Math.PI;
+      setRotation(scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
 
   return (
     <div className="App"  >
@@ -37,26 +80,36 @@ function App() {
         </div>
       </div>
 
+
       {/* ( 2 ) */}
       <div id="Landing" className="Landing"   >
         <div className="container">
+          
+          <div className="right">
+            <h2>Start Selling <span></span></h2>
+            <p>Become the next online success story — sell anything, anywhere, to anyone. Control everything from a single platform with centralized inventory,order management, and pricing.</p>
+            <button> Get started for free</button>
+          </div>
+
+          <div className="Animation" style={{transform:`rotate(${rotation}deg)`}} ref={ref} >
+            <div className="SliderPhone"><img  src={`./img/Iphone/${images[currentSlider]}.jpg`} alt="" /></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div className="Landing2">
+        <div className="contor">
+          <div className="shadow"></div>
         <div className="right">
-          <h2>Start Selling <span></span></h2>
-          <p>Become the next online success story — sell anything, anywhere, to anyone. Control everything from a single platform with centralized inventory,order management, and pricing.</p>
-          <button> Get started for free</button>
+          <h2>Your first sale is only a few clicks away</h2>
+          <p>The easiest way to sell anything — products, services, digital goods, subscriptions — without coding, developers, designers. Manage everything in  one place — from your desk or on-the-go. Just sign up and start building your dream.</p>
+          <div className="group">
+            <img src="./Screenshot 2023-10-11 133645.png" alt="" />
+            <span>2022 TOP PERFORMER. <br/> Small Business eCommerce Software </span>
+          </div>
+          <button>Get start for free </button>
         </div>
-
-        <div className="left">
-
-          {/* <div id="div2">
-              <h1>Div 2</h1>
-              <p>Content for div 2 here.</p>
-              <img id="phone" src="https://don16obqbay2c.cloudfront.net/wp-content/themes/ecwid/images/hpc/phone-slide1_.jpg" alt="Phone"/>
-          </div> */}
-          <video autoPlay={true}  loop playsInline={true} type="video/mp4"     src="./WhatsApp Video 2023-10-10 at 23.42.53_e3723d33.mp4" ></video>
-
-        </div>
-
         </div>
       </div>
 
